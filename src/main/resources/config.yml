@@ -1,0 +1,58 @@
+# BedWars1058-SpectatorOptions by CubeCrafter
+spectator-settings-item:
+  enabled: true
+  slot: 4
+  material: COMPARATOR
+  displayname: "&b&lSpectator Settings &7(Right Click)"
+  lore:
+    - "&7Right Click to Open!"
+play-again-item:
+# WARNING! Play Again in BUNGEE mode is not available yet!
+  enabled: true
+  slot: 7
+  material: PAPER
+  displayname: "&b&lPlay Again &7(Right Click)"
+  lore:
+    - "&7Right Click to Play Again!"
+menu-displayname: "Spectator Settings"
+menu-size: 36
+items:
+  no-speed:
+    slot: 11
+    material: LEATHER_BOOTS
+    displayname: "&aNo Speed"
+    lore: []
+  speed-1:
+    slot: 12
+    material: CHAINMAIL_BOOTS
+    displayname: "&aSpeed I"
+    lore: []
+  speed-2:
+    slot: 13
+    material: IRON_BOOTS
+    displayname: "&aSpeed II"
+    lore: []
+  speed-3:
+    slot: 14
+    material: GOLDEN_BOOTS
+    displayname: "&aSpeed III"
+    lore: []
+  speed-4:
+    slot: 15
+    material: DIAMOND_BOOTS
+    displayname: "&aSpeed IV"
+    lore: []
+  night-vision:
+    slot: 22
+    material: ENDER_EYE
+    displayname-enabled: "&cDisable Night Vision"
+    lore-enabled:
+      - "&7Click to disable night vision!"
+    displayname-disabled: "&aEnable Night Vision"
+    lore-disabled:
+      - "&7Click to enable night vision!"
+messages:
+  speed-disabled: "&cYou no longer have any speed effects!"
+  speed-enabled: "&aYou now have Speed {tier}!"
+  night-vision-enabled: "&aYou now have night vision!"
+  night-vision-disabled: "&cYou no longer have night vision!"
