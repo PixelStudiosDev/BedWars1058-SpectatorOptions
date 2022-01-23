@@ -32,6 +32,7 @@ public final class SpectatorOptions extends JavaPlugin {
             instance = this;
             getServer().getPluginManager().registerEvents(new ArenaJoinListener(), this);
             getServer().getPluginManager().registerEvents(new ArenaLeaveListener(), this);
+            getServer().getPluginManager().registerEvents(new GameEndListener(), this);
             getServer().getPluginManager().registerEvents(new InteractListener(), this);
             getServer().getPluginManager().registerEvents(new DeathListener(), this);
             getServer().getPluginManager().registerEvents(new MenuListener(), this);
@@ -77,7 +78,7 @@ public final class SpectatorOptions extends JavaPlugin {
 
     public void playAgain(Player p){
         String arenaGroup = bw.getArenaUtil().getArenaByPlayer(p).getGroup();
-        bw.getArenaUtil().getArenaByPlayer(p).removeSpectator(p, true);
+        bw.getArenaUtil().getArenaByPlayer(p).removePlayer(p, true);
         bw.getArenaUtil().joinRandomFromGroup(p, arenaGroup);
     }
 

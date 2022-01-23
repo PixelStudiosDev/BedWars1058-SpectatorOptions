@@ -6,7 +6,7 @@
 
     <groupId>me.cubecrafter</groupId>
     <artifactId>BedWars1058-SpectatorOptions</artifactId>
-    <version>1.0</version>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
 
     <name>BedWars1058-SpectatorOptions</name>

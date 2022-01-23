@@ -4,6 +4,7 @@ import com.andrei1058.bedwars.api.events.player.PlayerJoinArenaEvent;
 import me.cubecrafter.spectatoroptions.SpectatorOptions;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.potion.PotionEffectType;
 
 public class ArenaJoinListener implements Listener {
 

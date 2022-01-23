@@ -1,4 +1,6 @@
 # BedWars1058-SpectatorOptions by CubeCrafter
+spectators-auto-playagain-on-game-end: true
+winners-auto-playagain-on-game-end: true
 spectator-settings-item:
   enabled: true
   slot: 4
