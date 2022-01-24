@@ -1,6 +1,8 @@
 package me.cubecrafter.spectatoroptions.listeners;
 
 import me.cubecrafter.spectatoroptions.SpectatorOptions;
+import me.cubecrafter.spectatoroptions.menus.PlayAgainMenu;
+import me.cubecrafter.spectatoroptions.menus.SpectatorSettingsMenu;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,9 +14,9 @@ public class InteractListener implements Listener {
     public void onPlayerInteract(PlayerInteractEvent e){
         Player p = e.getPlayer();
         if(p.getItemInHand().equals(SpectatorOptions.getInstance().optionsItem)){
-            SpectatorOptions.getInstance().openMenu(p);
+            SpectatorSettingsMenu spectatorSettingsMenu = new SpectatorSettingsMenu(p);
         }else if(p.getItemInHand().equals(SpectatorOptions.getInstance().playAgainItem)){
-            SpectatorOptions.getInstance().playAgain(p);
+            PlayAgainMenu playAgainMenu = new PlayAgainMenu(p);
         }
     }
 

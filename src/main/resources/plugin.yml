@@ -5,3 +5,6 @@ description: Adds Play Again feature and more settings for spectators!
 api-version: 1.13
 softdepend: [BedWars1058]
 author: CubeCrafter
+commands:
+  test:
+    description: Test Command

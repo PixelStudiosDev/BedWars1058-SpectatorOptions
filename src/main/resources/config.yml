@@ -9,16 +9,15 @@ spectator-settings-item:
   lore:
     - "&7Right Click to Open!"
 play-again-item:
-# WARNING! Play Again in BUNGEE mode is not available yet!
   enabled: true
   slot: 7
   material: PAPER
   displayname: "&b&lPlay Again &7(Right Click)"
   lore:
     - "&7Right Click to Play Again!"
-menu-displayname: "Spectator Settings"
-menu-size: 36
-items:
+settings-menu-displayname: "Spectator Settings"
+settings-menu-size: 36
+settings-items:
   no-speed:
     slot: 11
     material: LEATHER_BOOTS
@@ -53,6 +52,31 @@ items:
     displayname-disabled: "&aEnable Night Vision"
     lore-disabled:
       - "&7Click to enable night vision!"
+playagain-menu-displayname: "Play Again {group}"
+playagain-menu-size: 54
+playagain-menu-items:
+  arena-item:
+    slots: 10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34,37,38,39,40,41,42,43
+    material: PAPER
+    # Available placeholders: {arenadisplayname},{arenaplayers},{arenamaxplayers},{arenagroup},{arenastatus},{arenaname}
+    displayname: '&a{arenadisplayname}'
+    lore:
+      - '&7Players: &e{arenaplayers}&7/&e{arenamaxplayers}'
+      - '&7Mode: &b{arenagroup}'
+  random-join-item:
+    slot: 49
+    material: FIREWORK_ROCKET
+    enchanted: true
+    displayname: "&aRandom Join"
+    lore:
+      - '&7Click to join a random arena!'
+  filler-item:
+    enabled: true
+    slots: 0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,44,45,46,47,48,50,51,52,53
+    material: GRAY_STAINED_GLASS_PANE
+    enchanted: false
+    displayname: "&f"
+    lore: []
 messages:
   speed-disabled: "&cYou no longer have any speed effects!"
   speed-enabled: "&aYou now have Speed {tier}!"

@@ -24,18 +24,19 @@ public class GameEndListener implements Listener {
 
             if(config.getBoolean("spectators-auto-playagain-on-game-end")){
                 for(Player p : e.getArena().getSpectators()){
-                    e.getArena().removePlayer(p, true);
-                    arenaUtil.joinRandomFromGroup(p, arenaGroup);
+                    if(p.getWorld().equals(e.getArena().getWorld()))
+                        e.getArena().removePlayer(p, true);
+                        arenaUtil.joinRandomFromGroup(p, arenaGroup);
+                    }
                 }
-            }
 
             if(config.getBoolean("winners-auto-playagain-on-game-end")){
                 for(UUID uuid : e.getWinners()){
                     Player p = Bukkit.getPlayer(uuid);
-                    e.getArena().removePlayer(p, true);
-                    arenaUtil.joinRandomFromGroup(p, arenaGroup);
-                }
-
+                    if(p.getWorld().equals(e.getArena().getWorld()))
+                        e.getArena().removePlayer(p, true);
+                        arenaUtil.joinRandomFromGroup(p, arenaGroup);
+                    }
             }
         }, 80L);
     }
