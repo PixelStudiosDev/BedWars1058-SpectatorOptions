@@ -72,10 +72,10 @@ public class MenuListener implements Listener {
             e.setCancelled(true);
             NBTItem nbtItem = new NBTItem(e.getCurrentItem());
             if(arenaUtil.getArenas().contains(arenaUtil.getArenaByName(nbtItem.getString("id")))){
-                //arenaUtil.getArenaByPlayer(p).removePlayer(p, true);
+                arenaUtil.getArenaByPlayer(p).removePlayer(p, true);
                 arenaUtil.getArenaByName(nbtItem.getString("id")).addPlayer(p, false);
             }else if(nbtItem.getString("id").equals("random-join")){
-                //arenaUtil.getArenaByPlayer(p).removePlayer(p, true);
+                arenaUtil.getArenaByPlayer(p).removePlayer(p, true);
                 arenaUtil.joinRandomFromGroup(p, playerArena.getGroup());
             }
         }

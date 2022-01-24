@@ -6,7 +6,6 @@ import com.andrei1058.bedwars.api.arena.IArena;
 import me.cubecrafter.spectatoroptions.SpectatorOptions;
 import me.cubecrafter.spectatoroptions.utils.Menu;
 import me.cubecrafter.spectatoroptions.utils.Utils;
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -46,8 +45,8 @@ public class PlayAgainMenu {
                 Iterator<String> it2 = Arrays.stream(config.getString("playagain-menu-items.arena-item.slots").split(",")).iterator();
                 for(IArena arena : SpectatorOptions.getInstance().bw.getArenaUtil().getArenas()){
                     if(arena.getGroup().equals(arenaUtil.getArenaByPlayer(p).getGroup()) && arena.getStatus().equals(GameState.waiting) || arena.getStatus().equals(GameState.starting)){
-                        if(it.hasNext()){
-                            playAgain.setItem(config.getString("playagain-menu-items.arena-item.material"), Integer.parseInt(it.next()), arena.getStatus().equals(GameState.starting), Utils.format(config.getString("playagain-menu-items.arena-item.displayname"), arena), Utils.format(config.getStringList("playagain-menu-items.arena-item.lore"), arena), arena.getArenaName());
+                        if(it2.hasNext()){
+                            playAgain.setItem(config.getString("playagain-menu-items.arena-item.material"), Integer.parseInt(it2.next()), arena.getStatus().equals(GameState.starting), Utils.format(config.getString("playagain-menu-items.arena-item.displayname"), arena), Utils.format(config.getStringList("playagain-menu-items.arena-item.lore"), arena), arena.getArenaName());
                         }
                     }
                 }
