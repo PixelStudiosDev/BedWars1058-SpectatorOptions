@@ -82,3 +82,4 @@ messages:
   speed-enabled: "&aYou now have Speed {tier}!"
   night-vision-enabled: "&aYou now have night vision!"
   night-vision-disabled: "&cYou no longer have night vision!"
+  config-reloaded: "&7Config successfully reloaded!"

@@ -2,7 +2,7 @@ package me.cubecrafter.spectatoroptions;
 
 import com.andrei1058.bedwars.api.BedWars;
 import com.cryptomorin.xseries.XMaterial;
-import me.cubecrafter.spectatoroptions.commands.TestCommand;
+import me.cubecrafter.spectatoroptions.commands.ReloadCommand;
 import me.cubecrafter.spectatoroptions.listeners.*;
 import me.cubecrafter.spectatoroptions.utils.FileManager;
 import me.cubecrafter.spectatoroptions.utils.Metrics;
@@ -24,8 +24,9 @@ public final class SpectatorOptions extends JavaPlugin {
     @Override
     public void onEnable() {
         if(Bukkit.getPluginManager().getPlugin("BedWars1058") != null){
-            bw = Bukkit.getServicesManager().getRegistration(BedWars.class).getProvider();
             instance = this;
+            bw = Bukkit.getServicesManager().getRegistration(BedWars.class).getProvider();
+            new ReloadCommand(bw.getBedWarsCommand(), "options-reload");
             config = new FileManager("config", "plugins/BedWars1058/Addons/SpectatorOptions");
             getServer().getPluginManager().registerEvents(new ArenaJoinListener(), this);
             getServer().getPluginManager().registerEvents(new ArenaLeaveListener(), this);
@@ -33,7 +34,6 @@ public final class SpectatorOptions extends JavaPlugin {
             getServer().getPluginManager().registerEvents(new InteractListener(), this);
             getServer().getPluginManager().registerEvents(new DeathListener(), this);
             getServer().getPluginManager().registerEvents(new MenuListener(), this);
-            getCommand("test").setExecutor(new TestCommand());
             int pluginId = 14041;
             Metrics metrics = new Metrics(this, pluginId);
         }else{
