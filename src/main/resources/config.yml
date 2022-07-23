@@ -1,85 +1,122 @@
-# BedWars1058-SpectatorOptions by CubeCrafter
-spectators-auto-playagain-on-game-end: true
-winners-auto-playagain-on-game-end: true
-spectator-settings-item:
-  enabled: true
-  slot: 4
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# | SPECTATOR OPTIONS ADDON CONFIGURATION    |
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# Version: ${project.version}
+# Author: CubeCrafter
+# Discord: https://discord.gg/ehjkwp5Fn4
+
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+# | SETTINGS                                 |
+# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~#
+
+inventory-item:
   material: COMPARATOR
   displayname: "&b&lSpectator Settings &7(Right Click)"
   lore:
     - "&7Right Click to Open!"
-play-again-item:
-  enabled: true
-  slot: 7
-  material: PAPER
-  displayname: "&b&lPlay Again &7(Right Click)"
-  lore:
-    - "&7Right Click to Play Again!"
-settings-menu-displayname: "Spectator Settings"
-settings-menu-size: 36
-settings-items:
-  no-speed:
-    slot: 11
-    material: LEATHER_BOOTS
-    displayname: "&aNo Speed"
-    lore: []
-  speed-1:
-    slot: 12
-    material: CHAINMAIL_BOOTS
-    displayname: "&aSpeed I"
-    lore: []
-  speed-2:
-    slot: 13
-    material: IRON_BOOTS
-    displayname: "&aSpeed II"
-    lore: []
-  speed-3:
-    slot: 14
-    material: GOLDEN_BOOTS
-    displayname: "&aSpeed III"
-    lore: []
-  speed-4:
-    slot: 15
-    material: DIAMOND_BOOTS
-    displayname: "&aSpeed IV"
-    lore: []
-  night-vision:
-    slot: 22
-    material: ENDER_EYE
-    displayname-enabled: "&cDisable Night Vision"
-    lore-enabled:
-      - "&7Click to disable night vision!"
-    displayname-disabled: "&aEnable Night Vision"
-    lore-disabled:
-      - "&7Click to enable night vision!"
-playagain-menu-displayname: "Play Again {group}"
-playagain-menu-size: 54
-playagain-menu-items:
-  arena-item:
-    slots: 10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34,37,38,39,40,41,42,43
-    material: PAPER
-    # Available placeholders: {arenadisplayname},{arenaplayers},{arenamaxplayers},{arenagroup},{arenastatus},{arenaname}
-    displayname: '&a{arenadisplayname}'
-    lore:
-      - '&7Players: &e{arenaplayers}&7/&e{arenamaxplayers}'
-      - '&7Mode: &b{arenagroup}'
-  random-join-item:
-    slot: 49
-    material: FIREWORK_ROCKET
-    enchanted: true
-    displayname: "&aRandom Join"
-    lore:
-      - '&7Click to join a random arena!'
-  filler-item:
-    enabled: true
-    slots: 0,1,2,3,4,5,6,7,8,9,17,18,26,27,35,36,44,45,46,47,48,50,51,52,53
+  slot: 4
+menu:
+  title: "Spectator Settings"
+  rows: 4
+  filler:
+    enabled: false
     material: GRAY_STAINED_GLASS_PANE
-    enchanted: false
     displayname: "&f"
-    lore: []
+    slots: 0,1,2,3
+  items:
+    speed-off:
+      material: LEATHER_BOOTS
+      displayname: "&aNo Speed"
+      lore: []
+      slot: 11
+    speed-one:
+      material: CHAINMAIL_BOOTS
+      displayname: "&aSpeed I"
+      lore: []
+      slot: 12
+    speed-two:
+      material: IRON_BOOTS
+      displayname: "&aSpeed II"
+      lore: []
+      slot: 13
+    speed-three:
+      material: GOLDEN_BOOTS
+      displayname: "&aSpeed III"
+      lore: []
+      slot: 14
+    speed-four:
+      material: DIAMOND_BOOTS
+      displayname: "&aSpeed IV"
+      lore: []
+      slot: 15
+    auto-teleport:
+      enabled:
+        material: COMPASS
+        displayname: "&cDisable Auto Teleport"
+        lore:
+        - "&7Click to disable auto teleport!"
+      disabled:
+        material: COMPASS
+        displayname: "&aEnable Auto Teleport"
+        lore:
+        - "&7Click to enable auto teleport!"
+      slot: 20
+    night-vision:
+      enabled:
+        material: ENDER_PEARL
+        displayname: "&cDisable Night Vision"
+        lore:
+        - "&7Click to disable night vision!"
+      disabled:
+        material: ENDER_EYE
+        displayname: "&aEnable Night Vision"
+        lore:
+        - "&7Click to enable night vision!"
+      slot: 21
+    first-person:
+      enabled:
+        material: CLOCK
+        displayname: "&cDisable First Person"
+        lore:
+          - "&7Click to disable first person"
+          - "&7spectating when using the"
+          - "&7compass!"
+          - "&7You can also right-click a"
+          - "&7player to spectate them in"
+          - "&7first person."
+      disabled:
+        material: CLOCK
+        displayname: "&aEnable First Person"
+        lore:
+          - "&7Click to enable first person"
+          - "&7spectating when using the"
+          - "&7compass!"
+          - "&7You can also right-click a"
+          - "&7player to spectate them in"
+          - "&7first person."
+      slot: 23
+    show-spectators:
+      enabled:
+        material: REDSTONE
+        displayname: "&cHide Spectators"
+        lore:
+          - "&7Click to hide other spectators!"
+      disabled:
+        material: GLOWSTONE_DUST
+        displayname: "&aShow Spectators"
+        lore:
+          - "&7Click to show other spectators!"
+      slot: 24
 messages:
-  speed-disabled: "&cYou no longer have any speed effects!"
   speed-enabled: "&aYou now have Speed {tier}!"
+  speed-disabled: "&cYou no longer have any speed effects!"
+  auto-teleport-enabled: "&aYou will now auto teleport to targets!"
+  auto-teleport-disabled: "&cYou will no longer auto teleport to targets!"
   night-vision-enabled: "&aYou now have night vision!"
   night-vision-disabled: "&cYou no longer have night vision!"
-  config-reloaded: "&7Config successfully reloaded!"
+  first-person-enabled: "&aYou will now by default use First Person spectating!"
+  first-person-disabled: "&cYou will now by default use Third Person spectating!"
+  show-spectators-enabled: "&aYou can now see other spectators!"
+  show-spectators-disabled: "&cYou can no longer see other spectators!"
+  target-format: "&fTarget: &a&l{target} &f- Distance: &a&l{distance}m"
+  target-lost: "&c&lTarget Lost!"

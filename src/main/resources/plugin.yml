@@ -1,7 +1,8 @@
 name: BedWars1058-SpectatorOptions
 version: '${project.version}'
 main: me.cubecrafter.spectatoroptions.SpectatorOptions
-description: Adds Play Again feature and more settings for spectators!
 api-version: 1.13
-softdepend: [BedWars1058]
 author: CubeCrafter
+description: Add useful settings for spectators!
+depend:
+  - BedWars1058
